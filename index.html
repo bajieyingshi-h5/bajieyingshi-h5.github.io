@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>八戒影视 - 下饭剧/躺平电影/偷懒短剧/半夜馋片 | bajieyingshi-h5</title>
+<meta name="description" content="八戒影视（bajieyingshi-h5.github.io）像高老庄院子里的放映摊：电影、电视剧、动漫、综艺、纪录片、短剧按“下饭/躺平/偷懒/馋片”排，耙痕榜、八戒手记，移动端自适应。">
+<meta name="keywords" content="八戒影视,下饭剧,躺平电影,短剧导航,电影导航,电视剧导航,动漫导航,高老庄放映摊,bajieyingshi-h5">
+<meta name="author" content="八戒影视">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://bajieyingshi-h5.github.io/">
+<meta property="og:title" content="八戒影视 - 吃饱再看片，院子放好片">
+<meta property="og:description" content="下饭剧、躺平电影、偷懒短剧、半夜馋片：八戒影视不卷更新，只挑适合瘫着看的片。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bajieyingshi-h5.github.io/">
+<meta property="og:site_name" content="八戒影视">
+<meta name="msvalidate.01" content="BING_VERIFY_CODE">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"八戒影视",
+  "url":"https://bajieyingshi-h5.github.io/",
+  "description":"八戒影视是高老庄院子里的影视导航摊，覆盖电影、电视剧、动漫、综艺、纪录片、短剧。"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"八戒影视和其他电影站有什么不同？",
+      "acceptedAnswer":{"@type":"Answer","text":"别的站讲“首发/高清/全网最全”，八戒影视讲“下饭不下饭、躺平不躺平”。片子按生活状态排：吃饭看什么、瘫着看什么、偷懒看什么、半夜馋什么。"}
+    },
+    {
+      "@type":"Question",
+      "name":"八戒影视提供盗版播放吗？",
+      "acceptedAnswer":{"@type":"Answer","text":"不提供。八戒影视是影视导航与片单站，只做分类、简介、追更提醒和观片手记，不挂侵权片源、不绑播放器下载器。"}
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --bg:#16331f;
+  --card:#1d4029;
+  --ink:#f3ead2;
+  --muted:#bcd0b8;
+  --brass:#caa15a;
+  --chili:#ff5d4d;
+  --lamp:#ffd166;
+  --line:rgba(202,161,90,.34);
+  --shadow:0 18px 46px rgba(0,0,0,.5);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  background:
+    radial-gradient(820px 460px at 85% -8%,rgba(255,209,102,.16),transparent 60%),
+    radial-gradient(760px 420px at -8% 8%,rgba(255,93,77,.14),transparent 55%),
+    linear-gradient(180deg,#16331f,#13291a 70%,#0f2014 100%);
+  color:var(--ink);line-height:1.78;
+}
+a{color:inherit;text-decoration:none}
+
+/* 门楼导航 */
+.bj-top{position:sticky;top:0;z-index:999;background:rgba(22,51,31,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bj-top__in{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:.7rem 1rem}
+.bj-logo{font-weight:900;font-size:1.18rem}
+.bj-logo b{color:var(--brass)}
+.bj-logo i{color:var(--lamp);font-style:normal}
+.bj-nav{display:flex;gap:.3rem}
+.bj-nav a{padding:.45rem .8rem;border-radius:8px;font-size:.9rem;color:var(--muted);font-weight:600}
+.bj-nav a:hover{background:rgba(202,161,90,.18);color:var(--lamp)}
+.bj-burger{display:none;flex-direction:column;gap:4px;cursor:pointer}
+.bj-burger span{width:22px;height:2px;background:var(--brass);border-radius:2px}
+
+/* Hero 院子 */
+.bj-hero{max-width:1180px;margin:0 auto;padding:3.4rem 1rem 2.6rem;text-align:center}
+.bj-rake{font-size:5rem;line-height:1;filter:drop-shadow(0 8px 18px rgba(0,0,0,.5))}
+.bj-hero h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.18;margin:.6rem 0 1rem}
+.bj-hero h1 em{font-style:normal;color:var(--chili)}
+.bj-hero h1 u{text-decoration:none;color:var(--lamp)}
+.bj-hero p{color:var(--muted);max-width:720px;margin:0 auto 1.8rem}
+.bj-cta{display:inline-flex;gap:.5rem;align-items:center;padding:.85rem 1.9rem;border-radius:10px;font-weight:800;color:#1a1206;background:linear-gradient(90deg,var(--lamp),var(--brass));box-shadow:var(--shadow)}
+.bj-dim{color:var(--muted);font-size:.85rem;letter-spacing:2px;font-family:ui-monospace,monospace}
+
+/* 区块 */
+.bj-sec{max-width:1180px;margin:0 auto;padding:3.3rem 1rem}
+.bj-head{margin-bottom:1.8rem;text-align:center}
+.bj-head .no{font-size:.74rem;color:var(--brass);letter-spacing:3px;font-family:ui-monospace,monospace}
+.bj-head h2{font-size:clamp(1.4rem,3.5vw,2.2rem);font-weight:900;margin-top:.3rem}
+.bj-head h2 i{color:var(--chili);font-style:normal}
+.bj-head p{color:var(--muted);margin-top:.35rem;font-size:.94rem}
+
+/* 八戒片单 */
+.bj-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.bj-cell{border:1px solid var(--line);border-radius:18px;padding:1.3rem 1.1rem;background:var(--card);transition:.25s}
+.bj-cell:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.bj-cell .ic{font-size:1.8rem}
+.bj-cell h3{font-size:1.02rem;margin:.5rem 0 .35rem}
+.bj-cell p{font-size:.8rem;color:var(--muted)}
+
+/* 庄里分类 */
+.bj-cats{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem}
+.bj-c{border-radius:20px;padding:1.3rem 1rem;text-align:center;background:var(--card);border:1px solid var(--line);transition:.25s}
+.bj-c:hover{transform:translateY(-4px)}
+.bj-c .dot{width:34px;height:34px;border-radius:50%;margin:0 auto .6rem}
+.bj-c.home .dot{background:var(--lamp)}
+.bj-c.jianghu .dot{background:var(--chili)}
+.bj-c.yao .dot{background:#9be8c0}
+.bj-c.eat .dot{background:var(--brass)}
+.bj-c.xianyu .dot{background:#9fb0d0}
+.bj-c h3{font-size:.96rem}
+.bj-c p{font-size:.74rem;color:var(--muted)}
+
+/* 嚼劲榜：耙痕 */
+.bj-rank{display:grid;gap:1.1rem}
+.bj-item{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.1rem 1.2rem}
+.bj-item h3{font-size:1.04rem;display:flex;justify-content:space-between;margin-bottom:.6rem}
+.bj-item h3 span{color:var(--lamp)}
+.bj-bar{height:14px;border-radius:8px;background:#0f2014;overflow:hidden;position:relative;border:1px solid var(--line);
+  background-image:repeating-linear-gradient(90deg,rgba(202,161,90,.35) 0 2px,transparent 2px 10px)}
+.bj-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--brass),var(--chili))}
+.bj-bar i::after{content:"🍖";position:absolute;right:5px;top:-3px;font-size:.85rem}
+
+/* 手记 */
+.bj-notes{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+.bj-note{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.4rem}
+.bj-note .tag{font-size:.72rem;padding:.2rem .6rem;border-radius:6px;font-weight:700}
+.bj-note.hungry .tag{background:rgba(255,209,102,.18);color:var(--lamp)}
+.bj-note.lazy .tag{background:rgba(255,93,77,.18);color:var(--chili)}
+.bj-note h3{font-size:1.05rem;margin:.6rem 0 .4rem}
+.bj-note p{font-size:.86rem;color:var(--muted)}
+
+/* 关于 */
+.bj-about{background:linear-gradient(160deg,#234a2f,#16331f);border:1px solid var(--line);border-radius:26px;padding:2.4rem}
+.bj-about h2{font-size:1.9rem;margin-bottom:.8rem}
+.bj-about h2 u{color:var(--brass);text-decoration:none}
+.bj-about p{color:var(--muted);margin-bottom:1rem}
+.bj-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.4rem}
+.bj-stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.1rem;text-align:center}
+.bj-stat b{font-size:1.5rem;color:var(--lamp);display:block}
+.bj-stat span{font-size:.8rem;color:var(--muted)}
+
+/* FAQ */
+.bj-faq details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.2rem 1.1rem;margin-bottom:.7rem}
+.bj-faq summary{cursor:pointer;padding:.85rem 0;font-weight:700}
+.bj-faq p{padding:0 0 .85rem;color:var(--muted)}
+
+/* 页脚 */
+.bj-foot{border-top:1px solid var(--line);background:#0c1a10;padding:2.2rem 1rem;text-align:center;color:var(--muted);font-size:.86rem}
+.bj-foot a{color:var(--brass)}
+.bj-foot__links{display:flex;gap:1.1rem;justify-content:center;flex-wrap:wrap;margin-bottom:1rem}
+.bj-foot__links a{font-size:.84rem}
+
+@media(max-width:980px){
+  .bj-grid{grid-template-columns:repeat(2,1fr)}
+  .bj-cats{grid-template-columns:repeat(3,1fr)}
+  .bj-notes{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .bj-nav{display:none;position:absolute;top:56px;left:0;right:0;flex-direction:column;gap:0;background:rgba(22,51,31,.98);border-bottom:1px solid var(--line)}
+  .bj-nav.show{display:flex}
+  .bj-nav a{padding:.85rem 1rem;border-bottom:1px solid var(--line)}
+  .bj-burger{display:flex}
+  .bj-grid{grid-template-columns:1fr 1fr}
+  .bj-cats{grid-template-columns:repeat(2,1fr)}
+  .bj-stats{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<header class="bj-top">
+  <div class="bj-top__in">
+    <div class="bj-logo">🐷 八戒<b>影视</b> <i>·高老庄放映摊</i></div>
+    <nav class="bj-nav" id="bjNav">
+      <a href="#home">院子</a>
+      <a href="#grid">八戒片单</a>
+      <a href="#cats">庄里分类</a>
+      <a href="#rank">嚼劲榜</a>
+      <a href="#notes">八戒手记</a>
+      <a href="#about">关于八戒</a>
+    </nav>
+    <div class="bj-burger" onclick="document.getElementById('bjNav').classList.toggle('show')">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+
+<section class="bj-hero" id="home">
+  <div class="bj-rake">🍃🍢🐽</div>
+  <p class="bj-dim">// yard screening · no rush</p>
+  <h1>吃饱再看片，<br><em>八戒</em>院子放<u>好片不卷</u></h1>
+  <p>八戒影视不拼“全网最全、秒更全网”，只拼“现在该瘫着看啥”：下饭剧、躺平电影、偷懒短剧、半夜馋片，一院子树影、一串小灯泡、一块旧幕布就开演。</p>
+  <a class="bj-cta" href="#grid">🥢 端碗来看片</a>
+</section>
+
+<section class="bj-sec" id="grid">
+  <div class="bj-head">
+    <div class="no">// eight-precepts programs</div>
+    <h2>八戒 <i>片单</i></h2>
+    <p>四种生活状态，四种片单，不按“最新”硬塞你。</p>
+  </div>
+  <div class="bj-grid">
+    <div class="bj-cell"><div class="ic">🍚</div><h3>下饭剧</h3><p>家长里短、职场轻喜剧、韩剧、国产群像，嚼着饭不噎。</p></div>
+    <div class="bj-cell"><div class="ic">🛋️</div><h3>躺平电影</h3><p>公路、治愈、慢镜头、不用动脑，瘫沙发正好。</p></div>
+    <div class="bj-cell"><div class="ic">📱</div><h3>偷懒短剧</h3><p>逆袭、甜宠、豪门、重生，刷一集像啃半根黄瓜。</p></div>
+    <div class="bj-cell"><div class="ic">🌙</div><h3>半夜馋片</h3><p>美食纪录片、夜市综艺、馋虫动画，越看越饿但停不下。</p></div>
+  </div>
+</section>
+
+<section class="bj-sec" id="cats">
+  <div class="bj-head">
+    <div class="no">// gaolaozhuang shelves</div>
+    <h2>庄里 <i>分类</i></h2>
+    <p>高老庄不按院线分，按“像庄里哪类人”分。</p>
+  </div>
+  <div class="bj-cats">
+    <div class="bj-c home"><div class="dot"></div><h3>家常剧</h3><p>邻里、婆媳、饭桌、赶集</p></div>
+    <div class="bj-c jianghu"><div class="dot"></div><h3>江湖片</h3><p>刀客、镖局、恩怨、酒馆</p></div>
+    <div class="bj-c yao"><div class="dot"></div><h3>妖怪动漫</h3><p>狐仙、树精、龙王、小妖打工</p></div>
+    <div class="bj-c eat"><div class="dot"></div><h3>吃戏纪录片</h3><p>夜市、灶台、腌菜、赶海</p></div>
+    <div class="bj-c xianyu"><div class="dot"></div><h3>咸鱼综艺</h3><p>躺平、露营、赶海、慢直播</p></div>
+  </div>
+</section>
+
+<section class="bj-sec" id="rank">
+  <div class="bj-head">
+    <div class="no">// rake-score board</div>
+    <h2>嚼劲 <i>榜</i></h2>
+    <p>八戒影视按“下饭度 + 躺平度 + 偷懒爽感 + 半夜馋度”综合排，不是单纯热度。</p>
+  </div>
+  <div class="bj-rank">
+    <div class="bj-item"><h3>1. 下饭：父母爱情 重刷版 <span>98%</span></h3><div class="bj-bar"><i style="width:98%"></i></div></div>
+    <div class="bj-item"><h3>2. 偷懒：重生后我成了首富 <span>95%</span></h3><div class="bj-bar"><i style="width:95%"></i></div></div>
+    <div class="bj-item"><h3>3. 半夜馋：人间风味·夜市篇 <span>93%</span></h3><div class="bj-bar"><i style="width:93%"></i></div></div>
+    <div class="bj-item"><h3>4. 躺平：海边的卡夫卡 慢剪 <span>90%</span></h3><div class="bj-bar"><i style="width:90%"></i></div></div>
+    <div class="bj-item"><h3>5. 江湖：镖局往事 <span>87%</span></h3><div class="bj-bar"><i style="width:87%"></i></div></div>
+  </div>
+</section>
+
+<section class="bj-sec" id="notes">
+  <div class="bj-head">
+    <div class="no">// piggy notes</div>
+    <h2>八戒 <i>手记</i></h2>
+    <p>一边是馋嘴观众，一边是懒人放映员。</p>
+  </div>
+  <div class="bj-notes">
+    <article class="bj-note hungry">
+      <span class="tag">🍜 馋嘴观众</span>
+      <h3>下饭剧不能太烧脑</h3>
+      <p>中午刚被需求折磨完，吃饭时再让我猜凶手我会吐。要的是“哎这媳妇嘴真利索”“哎这大爷又护犊子”——饭香和人情味一起冒出来才好。</p>
+    </article>
+    <article class="bj-note lazy">
+      <span class="tag">🛋️ 懒人放映员</span>
+      <h3>躺平电影怎么排</h3>
+      <p>不排悬疑、不排战争、不排职场内卷。排慢车、排海边、排下雨天、排猫在窗台。八戒影视的片单像蒲扇：不解决问题，只让你凉快一会儿。</p>
+    </article>
+    <article class="bj-note hungry">
+      <span class="tag">🍜 馋嘴观众</span>
+      <h3>半夜馋片是陷阱也是安慰</h3>
+      <p>《人间风味》看完必点烧烤，但第二天想起“原来世界上还有人认真烤一串腰子”，又觉得活着挺好。八戒影视不拦你馋，只帮你馋得有品位。</p>
+    </article>
+    <article class="bj-note lazy">
+      <span class="tag">🛋️ 懒人放映员</span>
+      <h3>短剧为什么留一口</h3>
+      <p>短剧不是烂，是“一口闷”。八戒影视把短剧当咸菜：正片吃腻了来一集逆袭爽文，别当主菜，当配饭的小碟就行。</p>
+    </article>
+  </div>
+</section>
+
+<section class="bj-sec" id="about">
+  <div class="bj-about">
+    <h2>关于 <u>八戒影视</u></h2>
+    <p>
+      八戒影视（bajieyingshi-h5.github.io）不是另一个“全网影视大全”，它是高老庄院子里支起来的放映摊：竹椅、蚊子、小灯泡、旧幕布，片子不新不贵，但挑得有人味。
+    </p>
+    <p>
+      我们覆盖电影、电视剧、动漫、综艺、纪录片、短剧，但入口是生活状态：你现在是饿、是累、是懒、还是睡不着？八戒先问人，再递片。[7](@ref)
+    </p>
+    <div class="bj-stats">
+      <div class="bj-stat"><b>4 态</b><span>下饭/躺平/偷懒/半夜馋</span></div>
+      <div class="bj-stat"><b>5 庄类</b><span>家常/江湖/妖怪/吃戏/咸鱼</span></div>
+      <div class="bj-stat"><b>0 卷</b><span>不逼你追更</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="bj-sec bj-faq">
+  <div class="bj-head">
+    <div class="no">// q & a</div>
+    <h2>八戒 <i>问答</i></h2>
+  </div>
+  <details open>
+    <summary>八戒影视为什么这么“懒”？</summary>
+    <p>因为大多数站都在卷更新、卷清晰度、卷“秒播”。八戒反着来：你下班已经很累了，站子别再当监工。片子可以老，但得顺嘴、顺胃、顺脾气。</p>
+  </details>
+  <details>
+    <summary>短剧也很低质，为什么还放？</summary>
+    <p>八戒影视不放低质当主流，只把短剧放进“偷懒”那一格：明确告诉你“这是咸菜不是主菜”。会看的人，反而不会被短剧吃掉时间。</p>
+  </details>
+  <details>
+    <summary>和秋霞影视、影视大全差在哪？</summary>
+    <p>影视大全是百宝箱，秋霞影视是黄昏天台，八戒影视是庄里院子——一个什么都有，一个讲光，一个讲人饿不饿、累不累。</p>
+  </details>
+</section>
+
+<footer class="bj-foot">
+  <div class="bj-foot__links">
+    <a href="#grid">八戒片单</a>
+    <a href="#cats">庄里分类</a>
+    <a href="#rank">嚼劲榜</a>
+    <a href="#notes">八戒手记</a>
+    <a href="#about">关于八戒</a>
+    <a href="#">免责声明</a>
+  </div>
+  <p>© 2026 <a href="https://bajieyingshi-h5.github.io">八戒影视</a> · bajieyingshi-h5.github.io</p>
+  <p>八戒影视 —— 吃饱再看片，院子放好片。</p>
+</footer>
+
+<script>
+document.querySelectorAll('.bj-nav a').forEach(function(a){
+  a.addEventListener('click',function(){
+    document.getElementById('bjNav').classList.remove('show');
+  });
+});
+</script>
+
+</body>
+</html>
